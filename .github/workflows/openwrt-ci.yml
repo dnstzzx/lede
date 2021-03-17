@@ -42,8 +42,6 @@ jobs:
 
       - name: Update feeds
         run: |
-          git clone git@github.com:Zxilly/UA2F.git package/UA2f
-          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           make defconfig

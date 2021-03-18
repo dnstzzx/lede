@@ -53,6 +53,9 @@ jobs:
 
       - name: Compile firmware
         run: |
+          export NETFILTER_NETLINK_GLUE_CT=y
+          echo NETFILTER_NETLINK_GLUE_CT:${NETFILTER_NETLINK_GLUE_CT}
+          echo "======================="
           make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"

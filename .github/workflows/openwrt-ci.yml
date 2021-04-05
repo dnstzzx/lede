@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: x64_uefi
 
       - name: Space cleanup
         env:

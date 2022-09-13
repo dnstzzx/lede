@@ -52,7 +52,8 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           git clone https://github.com/Zxilly/UA2F.git package/UA2F
-          make oldconfig
+          make defconfig
+          ls -alh
 
       - name: Make download
         run: |
@@ -63,7 +64,7 @@ jobs:
         run: |
           export NETFILTER_NETLINK_GLUE_CT=y
           echo NETFILTER_NETLINK_GLUE_CT:${NETFILTER_NETLINK_GLUE_CT}
-          make -j$(nproc) #|| make -j1 V=s
+          make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="

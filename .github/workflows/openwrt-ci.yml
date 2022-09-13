@@ -52,6 +52,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           git clone https://github.com/Zxilly/UA2F.git package/UA2F
+          ls -alh
           make defconfig
           ls -alh
 

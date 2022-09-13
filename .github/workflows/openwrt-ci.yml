@@ -48,11 +48,14 @@ jobs:
 
       - name: Update feeds
         run: |
+          ls -alh
+          mv .config .config.bak
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           git clone https://github.com/Zxilly/UA2F.git package/UA2F
           ls -alh
+          mv .config.bak .config
           make defconfig
           ls -alh
 

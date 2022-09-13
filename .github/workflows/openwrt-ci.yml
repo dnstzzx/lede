@@ -52,7 +52,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           git clone https://github.com/Zxilly/UA2F.git package/UA2F
-          make defconfig
+          #make defconfig
 
       - name: Make download
         run: |
